@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { SidebarNav } from "./_components/SidebarNav";
+import { DashboardHeader } from "./_components/DashboardHeader";
 
 export default function DashboardLayout({
   children,
@@ -19,9 +20,12 @@ export default function DashboardLayout({
         </div>
         <SidebarNav />
       </aside>
-      <main className="pl-56">
-        <div className="min-h-screen px-6 py-8">{children}</div>
-      </main>
+      <div className="pl-56">
+        <DashboardHeader />
+        <main>
+          <div className="min-h-screen px-6 py-8">{children}</div>
+        </main>
+      </div>
     </div>
   );
 }
